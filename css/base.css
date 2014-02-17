@@ -1,0 +1,102 @@
+/*GOOGLE FONTS*/
+/*Yanone*/
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 200;
+  src: local("Yanone Kaffeesatz ExtraLight"), local("YanoneKaffeesatz-ExtraLight"), url("../yanone/We_iSDqttE3etzfdfhuPRUDqw7A1uQWuQSM-rfHaMOr3rGVtsTkPsbDajuO5ueQw.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Yanone Kaffeesatz Light"), local("YanoneKaffeesatz-Light"), url("../yanone/We_iSDqttE3etzfdfhuPRbHVephy08vG3A_n649omsL3rGVtsTkPsbDajuO5ueQw.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Yanone Kaffeesatz Regular"), local("YanoneKaffeesatz-Regular"), url("../yanone/YDAoLskQQ5MOAgvHUQCcLQa6gm6bS00u2Qn-iPLo1Go.woff") format("woff"); }
+
+/*Oxygen*/
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Oxygen Light"), local("Oxygen-Light"), url("../oxygen/AwBqWF2kjhlybWamaKMPcbO3LdcAZYWl9Si6vvxL-qU.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Oxygen"), local("Oxygen-Regular"), url("../oxygen/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Oxygen Bold"), local("Oxygen-Bold"), url("../oxygen/yVHpdQrmTj9Kax1tmFSx2rO3LdcAZYWl9Si6vvxL-qU.woff") format("woff"); }
+
+body {
+  font-family: "Oxygen", sans serif;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  font-size: 1.2em;
+  background-color: #191919;
+  margin: 0 auto;
+  overflow-x: hidden; }
+
+ul {
+  list-style: none; }
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.2); }
+  header .logo {
+    width: 50px;
+    height: 50px;
+    margin: auto; }
+  header nav {
+    width: 50%;
+    margin: auto; }
+    header nav ul {
+      margin: 0; }
+      header nav ul li {
+        padding: 10px; }
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85); }
+
+img {
+  width: 100%; }
+
+.flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between; }
+
+.container {
+  width: 100%;
+  min-height: 700px;
+  text-align: center;
+  margin: 0;
+  overflow-x: hidden; }
+
+.heading {
+  font-size: 4rem;
+  font-weight: 400; }

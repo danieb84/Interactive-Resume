@@ -1,0 +1,551 @@
+@import "base";
+@import "animation";
+
+@mixin underline {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+}
+@mixin inner-container {
+  width: 75%;
+  margin: 0 auto;
+}
+@mixin rotate($angle) {
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+  -o-transform: rotate($angle);
+  -ms-transform: rotate($angle);
+  transform: rotate($angle);
+}
+@mixin scale($k) {
+  -webkit-transform: scale($k);
+  -moz-transform: scale($k);
+  -o-transform: scale($k);
+  -ms-transform: scale($k);
+  transform: scale($k);
+}
+@mixin transform-transition($duration) {
+  -webkit-transition: -webkit-transform $duration;
+  -moz-transition: -moz-transform $duration;
+  -o-transition: -o-transform $duration;
+  -ms-transition: -ms-transform $duration;
+  transition: transform $duration;
+}
+
+@mixin transform-transition2($property2, $property3, $duration) {
+  -webkit-transition: -webkit-transform $duration, $property2 $duration, $property3 $duration;
+  -moz-transition: -moz-transform $duration, $property2 $duration, $property3 $duration;
+  -o-transition: -o-transform $duration, $property2 $duration, $property3 $duration;
+  -ms-transition: -ms-transform $duration, $property2 $duration, $property3 $duration;
+  transition: transform $duration, $property2 $duration, $property3 $duration;
+}
+
+@mixin transform-transition3($property2, $property3, $property4, $duration) {
+  -webkit-transition: -webkit-transform $duration, $property2 $duration, $property3 $duration, $property4 $duration;
+  -moz-transition: -moz-transform $duration, $property2 $duration, $property3 $duration, $property4 $duration;
+  -o-transition: -o-transform $duration, $property2 $duration, $property3 $duration, $property4 $duration;
+  -ms-transition: -ms-transform $duration, $property2 $duration, $property3 $duration, $property4 $duration;
+  transition: transform $duration, $property2 $duration, $property3 $duration, $property4 $duration;
+}
+
+@mixin transition1($property1, $duration) {
+  -webkit-transition: $property1 $duration;
+  -moz-transition: $property1 $duration;
+  -o-transition: $property1 $duration;
+  -ms-transition: $property1 $duration;
+  transition: $property1 $duration;
+}
+@mixin transition2($property1, $property2, $duration) {
+  -webkit-transition: $property1 $duration, $property2 $duration;
+  -moz-transition: $property1 $duration, $property2 $duration;
+  -o-transition: $property1 $duration, $property2 $duration;
+  -ms-transition: $property1 $duration, $property2 $duration;
+  transition: $property1 $duration, $property2 $duration;
+}
+@mixin transition3($property1, $property2, $property3, $duration) {
+  -webkit-transition: $property1 $duration, $property2 $duration, $property3 $duration;
+  -moz-transition: $property1 $duration, $property2 $duration, $property3 $duration;
+  -o-transition: $property1 $duration, $property2 $duration, $property3 $duration;
+  -ms-transition: $property1 $duration, $property2 $duration, $property3 $duration;
+  transition: $property1 $duration, $property2 $duration, $property3 $duration;
+}
+
+//COVER PAGE
+
+.cover-bg {
+  background-color: #390259;
+  position: relative;
+  z-index: 160;
+}
+#cover {
+  background: url(../images/cover.jpg) 0 -50px no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 150;
+  padding: 310px 100px;
+  @include box-sizing;
+
+  .title {
+    margin: auto;
+    p {
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+}
+
+.title {
+  h1 {
+    font-size: 4em;
+    margin: 0;
+  }
+}
+
+//PROFILE
+#profile1 {
+  padding: 120px 0;
+  @include box-sizing;
+  background-color: $turquoise;
+  z-index: 90;
+}
+
+.titles {
+  @include inner-container;
+  margin: 50px auto 0;
+  .outer-circle {
+    margin: auto;
+    @include circle(260px,$base-color);
+    box-shadow: 3px 3px 7px rgba(34, 34, 34, 0.3);
+    @include transform-transition(0.8s);
+  }
+  .inner-circle {
+    @include circle(257px, rgba(255, 255, 255, 0));
+    position: relative;
+    padding: 0px;
+    border: 2px dashed rgba(255, 255, 255, 0.80);
+    @include transition1(border, 0.8s);
+    p{
+      font-size: 2.3em;
+      position: relative;
+      top: 25px;
+      opacity: 0;
+      @include transition1(opacity, 0.8s);
+    }
+    img {
+      @include transition1(opacity, 0.8s);
+      width: 65%;
+      position: absolute;
+      top: 15.5%;
+      left: 20%;
+      opacity: 0.7;
+    }
+  }
+  .inner-circle:hover {
+    border: 2px dashed rgba(255, 255, 255, 0);
+  }
+  .title1 {
+    background: $blue;
+    border: 10px solid rgba(2, 129, 237, 0.2);
+  }
+  .title2 {
+    background: $pink;
+    border: 10px solid rgba(240, 0, 136, 0.1);
+    img {
+      top: 15%;
+      left: 14%;
+      width: 72%;
+    }
+  }
+  .title3 {
+   background: $purple;
+   border: 10px solid rgba(106, 2, 166, 0.2);
+  }
+  .title1:hover, .title2:hover, .title3:hover {
+    @include scale(1.2);
+    p {
+      opacity: 1;
+      font-size: 2.4em;
+    }
+    img {
+      opacity: 0;
+    }
+  }
+}
+
+#profile2 {
+  background-color: $teal;
+  padding: 70px 0;
+  z-index: 80;
+  @include box-sizing;
+  .flex {
+    @include inner-container;
+    div {
+      @include align-self-center;
+    }
+    div:first-child {
+      width: 60%;
+      font-size: 1.5em;
+      text-align: left;
+      padding-top: 20px;
+      @include box-sizing;
+      h1 {
+        @include underline;
+      }
+    }
+    div:last-child {
+      width: 38%;
+    }
+  }
+}
+
+#profile3 {
+  @extend #profile1;
+  z-index: 70;
+
+  .interests {
+    @include inner-container;
+    .flex {
+      p {
+        font-size: 1.4em;
+      }
+      div {
+        @include circle(180px, $base-color);
+        @include transform-transition(0.5s);
+      }
+      div:hover {
+        @include scale(1.2);
+      }
+      div:nth-child(1) .icon {
+        background: url("../images/icons/headphones.svg") center no-repeat, $blue2;
+        background-size: 60%;
+      }
+      div:nth-child(2) .icon {
+        background: url("../images/icons/camera.svg") center no-repeat, $pink2;
+        background-size: 60%;
+      }
+      div:nth-child(3) .icon {
+        background: url("../images/icons/meter2.svg") center no-repeat, $purple2;
+        background-size: 60%;
+      }
+      div:nth-child(4) .icon {
+        background: url("../images/icons/food.svg") center no-repeat, $green;
+        background-size: 60%;
+      }
+      div:nth-child(5) .icon {
+        background: url("../images/icons/airplane.svg") center no-repeat, $orange;
+        background-size: 60%;
+      }
+    }
+  }
+}
+
+//SKILLS
+#skills {
+  position: relative;
+  z-index: 60;
+  .skills {
+    z-index: 800;
+    position: absolute;
+    left: 42.5%;
+    top: 35%;
+    @include transform-transition2(color,color,0.5s);
+    .outer-circle {
+      @include circle(200px, #04a0c9);
+      border: 7px solid #04a0c9;
+      @include transition2(background-color, border, 0.8s);
+    }
+    .outer-circle:hover {
+      background-color: #FFFFFF;
+      border: 7px solid #FFFFFF;
+    }
+    .inner-circle {
+      @include circle(197px, rgba(255, 255, 255, 0));
+      border: 2px dashed rgba(255, 255, 255, 0.65);
+      @include transition1(border, 0.8s);
+      h1 {
+        position: relative;
+        top: 15px;
+      }
+    }
+    .inner-circle:hover {
+      border: 2px dashed #04a0c9;
+    }
+  }
+  .skills:hover {
+    @include scale(1.3);
+    color: #04a0c9;
+  }
+  .flex {
+    .web, .design {
+      width: 50%;
+      padding: 50px 0;
+      @include box-sizing;
+      text-align: center;
+    }
+    .web {
+      background-color: $teal;
+      .heading {
+        color: #07728e;
+      }
+    }
+    .design {
+      background-color: $sky-blue;
+      .heading {
+        color: #0981a0;
+      }
+    }
+    .heading {
+      background-color: rgba(255, 255, 255, 0.63);
+      width: 40%;
+      margin: 30px auto 0;
+      font-weight: 300;
+      padding: 10px;
+    }
+    ul {
+      margin: auto;
+      padding: 0 20px;
+    }
+    li {
+      background-color: rgba(255, 255, 255, 0.25);
+      width: 38%;
+      margin: 10px auto;
+      padding: 15px;
+      @include box-sizing;
+      font-size: 1.5em;
+      @include transform-transition2(color, background-color, 0.5s);
+    }
+    li:hover {
+      @include scale(1.2);
+      color: #04a0c9;
+      background-color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+//PROJECTS
+#projects {
+  .heading {
+    font-size: 2em;
+    @include underline;
+  }
+  h1, ul, p {
+    text-align: left;
+    list-style: circle;
+    color: #FFFFFF;
+  }
+  p, li {
+    font-size: 1.4em;
+  }
+  .container {
+    padding: 40px 0 0;
+    @include box-sizing;
+    .flex {
+      @include inner-container;
+      div {
+        width: 50%;
+      }
+      .image {
+        position: relative;
+        top: 25px;
+      }
+    }
+  }
+  #magister {
+    z-index: 50;
+    background-color: $turquoise;
+    img {
+      width: 60%;
+      border-radius: 10px;
+    }
+  }
+  #scbb, #iriecode {
+    img {
+      width: 80%;
+      border-radius: 20px;
+    }
+  }
+  #scbb {
+    z-index: 40;
+    background-color: $sky-blue;
+    .flex {
+      position: relative;
+      top: 30px;
+    }
+  }
+  #iriecode {
+    z-index: 30;
+    background-color: $teal;
+    img {
+      border: 10px solid #262626;
+      @include box-sizing;
+    }
+
+  }
+  #artwork{
+    background: $turquoise;
+    z-index: 20;
+    .art {
+      position: relative;
+      @include inner-container;
+    }
+    .heading {
+      width: 100%;
+    }
+    img {
+      border: 12px solid rgb(236, 236, 236);
+      box-shadow: 3px 3px 7px rgba(34, 34, 34, 0.3);
+      width: 35%;
+      z-index: 1;
+      @include box-sizing;
+      position: absolute;
+      top: 130px;
+    }
+    .tiger {
+      left:0;
+      @include rotate(-12deg);
+    }
+    .dome {
+      left:25%;
+      @include rotate(9deg);
+    }
+    .inspiration {
+      left:50%;
+      @include rotate(-10deg);
+    }
+    .loveofmusic {
+      left:75%;
+      @include rotate(7deg);
+    }
+
+    /*img {
+      position: absolute;
+      top: 130px;
+      border: 12px solid white;
+      width: 35%;
+      z-index: 1;
+      @include box-sizing;
+      box-shadow: 3px 3px 7px rgba(34, 34, 34, 0.47);
+      @include transform-transition3(opacity, width, z-index, 0.5s);
+    }*/
+
+   /* .tiger {
+      @include rotate(-12deg);
+      left:0;
+    }
+    .dome {
+     @include rotate(9deg);
+      left:20%;
+    }
+    .inspiration {
+      @include rotate(-10deg);
+      left:40%;
+    }
+    .loveofmusic {
+      @include rotate(7deg);
+      left:60%;
+    }
+    .tiger:hover, .dome:hover {
+      @include rotate(0deg);
+      width: 45%;
+      z-index: 100;
+    }
+    .inspiration:hover, .loveofmusic:hover {
+      @include rotate(0deg);
+      width: 50%;
+      z-index: 100;
+    }*/
+  }
+}
+
+//EDUCATION
+#education {
+  background-color: $sky-blue;
+  padding: 20px 0;
+  z-index: 10;
+  @include box-sizing;
+  .flex {
+    @include inner-container;
+    padding: 5px 0;
+    font-size: 1.8em;
+    .heading {
+      @include underline;
+    }
+    .icon-watermark {
+      width: 33.33%;
+    }
+  }
+  .flex:first-child .icon-watermark {
+    background: url("../images/icons/Graduation-Cap-256.png") no-repeat center;
+    background-size: 80%;
+  }
+  .flex:last-child .icon-watermark {
+    background: url("../images/icons/Diploma1-256.png") no-repeat center;
+    background-size: 80%;
+  }
+  .utech {
+    text-align: right;
+  }
+  .mico {
+    text-align: left;
+  }
+}
+
+//CONTACT
+#contact {
+  z-index: 5;
+  text-align: left;
+  padding-top: 40px;
+  @include box-sizing;
+  background: $turquoise;
+  a {
+    @include transition1(color, 0.5s);
+  }
+  a:hover {
+    color: rgba(3, 220, 239, 0.9);
+  }
+  div {
+    @include inner-container;
+    font-size: 2.8em;
+    .heading {
+      @include underline;
+    }
+    li {
+      padding: 40px 0 30px 150px;
+
+    }
+    .phone {
+      background: url("../images/icons/phone.svg") left no-repeat;
+      background-size: 8%;
+    }
+    .email {
+      background: url("../images/icons/mail4.svg") left no-repeat;
+      background-size: 8%;
+    }
+    .web {
+      background: url("../images/icons/globe.svg") left no-repeat;
+      background-size: 8%;
+      @include transition1(color, 0.5s);
+    }
+  }
+}
+
+//THANKS!
+#thanks {
+  background: $sky-blue;
+  padding: 200px 100px;
+  @include box-sizing;
+  font-size: 2em;
+  font-weight: 300;
+
+  div {
+    h1{
+      @include circle(200px, rgba(255, 255, 255, 0.15));
+      @include transition2(color, background-color, 0.8s);
+      padding: 100px;
+      margin: auto;
+    }
+    h1:hover {
+      color: $sky-blue;
+      background-color: #FFFFFF;
+    }
+  }
+}

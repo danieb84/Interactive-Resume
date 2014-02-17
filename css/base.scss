@@ -1,0 +1,184 @@
+/*GOOGLE FONTS*/
+
+/*Yanone*/
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Yanone Kaffeesatz ExtraLight'), local('YanoneKaffeesatz-ExtraLight'), url('../yanone/We_iSDqttE3etzfdfhuPRUDqw7A1uQWuQSM-rfHaMOr3rGVtsTkPsbDajuO5ueQw.woff') format('woff');
+}
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Yanone Kaffeesatz Light'), local('YanoneKaffeesatz-Light'), url('../yanone/We_iSDqttE3etzfdfhuPRbHVephy08vG3A_n649omsL3rGVtsTkPsbDajuO5ueQw.woff') format('woff');
+}
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url('../yanone/YDAoLskQQ5MOAgvHUQCcLQa6gm6bS00u2Qn-iPLo1Go.woff') format('woff');
+}
+/*Oxygen*/
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oxygen Light'), local('Oxygen-Light'), url('../oxygen/AwBqWF2kjhlybWamaKMPcbO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oxygen'), local('Oxygen-Regular'), url('../oxygen/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff') format('woff');
+}
+@font-face {
+  font-family: 'Oxygen';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oxygen Bold'), local('Oxygen-Bold'), url('../oxygen/yVHpdQrmTj9Kax1tmFSx2rO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
+}
+
+$base-font: 'Oxygen', sans serif;
+$base-font-weight: 300;
+$base-font-size: 1.2em;
+$border: 5px solid rgba(255, 255, 255, 0.5);
+
+//colors
+$base-color: rgba(255, 255, 255, 0.85);
+$turquoise: #09909c;
+$teal: #07728e;
+$blue: #0283dc;
+$pink: #c11c8b;
+$purple: #551da3;
+$sky-blue: #0981a0;
+$magenta: rgba(186, 1, 118, 0.8);
+$orange: rgba(242, 101, 34, 0.8);
+$green: rgba(57, 181, 74, 0.8);
+$blue2: rgba(2, 104, 192, 0.80);
+$pink2: rgba(240, 0, 136, 0.8);
+$purple2: rgba(106, 2, 166, 0.8);
+
+
+@mixin base-font {
+  font-family: $base-font;
+  color: rgba(255, 255, 255, 0.90);
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+}
+
+@mixin circle($diameter, $color) {
+  width:$diameter;
+  height:$diameter;
+  border-radius: 50%;
+  background-color: $color;
+}
+
+@mixin links($color) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -ms-flex;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin align-self-center {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -o-align-self: center;
+  -ms-align-self: center;
+  align-self: center;
+}
+
+@mixin contain {
+  width: 100%;
+  min-height: 700px;
+  text-align: center;
+  margin: 0;
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  @include base-font;
+  background-color: #191919;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  background: rgba(24, 24, 24, 0.41);
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+  }
+  nav {
+    width: 50%;
+    margin: auto;
+    ul {
+      margin: 0;
+      li {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+a {
+  @include links($base-color);
+}
+
+img {
+  width: 100%;
+}
+
+.flex {
+  @include flex;
+}
+
+.main-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 700px;
+  text-align: center;
+  margin: 0;
+}
+.heading {
+  font-size: 4rem;
+  font-weight: 400;
+}
