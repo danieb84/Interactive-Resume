@@ -104,6 +104,11 @@ img {
   font-size: 4rem;
   font-weight: 400; }
 
+footer {
+  background-color: #0981a0;
+  text-align: center;
+  padding: 10px 0; }
+
 .container, .titles, .flex {
   -webkit-perspective: 800px;
   -moz-perspective: 800px;
